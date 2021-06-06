@@ -1,0 +1,51 @@
+<!--
+Title: Exercise 2.2
+Author: Adam Rodgers
+Date: 5 June 2021
+Modified By: Adam Rodgers
+Description: Hello JavaScript
+Resources:
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="app-header">Exercise 2.2 - Hello JavaScript</h1>
+
+      <div class="card">
+        <div class="card-content">
+          <button id="btnMyCourse">What course am I taking?</button>
+
+          <p id="txtMyWorld"></p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="return-home">Return Home</a>
+    </div>
+
+    <script>
+      // Declare variables
+      const btnMyCourse = document.getElementById("btnMyCourse");
+      const txtMyWorld = document.getElementById("txtMyWorld");
+
+      // JS to set button alert text
+      btnMyCourse.addEventListener("click", function () {
+        alert("WEB 231 – Enterprise JavaScript I");
+      });
+
+      // JS to set last name text
+      let studentLastName = "Rodgers";
+      txtMyWorld.innerHTML = "You are now in " + studentLastName + "' world!";
+    </script>
+  </body>
+</html>
