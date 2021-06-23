@@ -44,9 +44,8 @@ Reference: https://www.w3schools.com/js/js_if_else.asp
       <a href="../index.html" class="return-home">Return</a>
     </div>
     <script>
+      const rnd = Math.floor(Math.random() * 10 + 1);
       function randomNumber() {
-        const rnd = Math.floor(Math.random() * 10 + 1);
-
         let numberGuess = document.getElementById("txtMyNumber").value;
 
         if (numberGuess == rnd) {
