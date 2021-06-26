@@ -1,0 +1,101 @@
+<!--
+Title: Assignment 4.2
+Author: Adam Rodgers
+Date: 20 June 2021
+Modified By: Adam Rodgers
+Description: Number Game
+
+References:
+https://www.w3schools.com/tags/tag_select.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="rodgers-sequence-game.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="app-header">Welcome to the sequence game!</h1>
+
+      <div class="card">
+        <div class="card-title">Sequence Selection Form</div>
+        <br />
+        <form>
+          <label for="txtMyNumber" id="txtMyNumberLabel">
+            Choose a number sequence:
+          </label>
+          <select name="cars" class="drop-down-menu" id="drop-down-menu">
+            <option value="select">--Select--</option>
+            <option value="fibonacci">Fibonacci Sequence</option>
+            <option value="even">Even Numbers</option>
+            <option value="odd">Odd Numbers</option>
+          </select>
+          <br />
+          <br />
+          <button type="button" id="btnDisplaySequence" class="btn">
+            Display Sequence
+          </button>
+        </form>
+      </div>
+      <br />
+      <div class="card">
+        <p class="card-title">Sequence Results</p>
+        <p id="card-content"></p>
+      </div>
+      <br />
+      <a href="../index.html" class="return-home">Return</a>
+    </div>
+    <script>
+      function displaySequence() {
+        const choice = document.getElementById("drop-down-menu").value;
+        if (choice == "fibonacci") {
+          let num1 = 0;
+          let num2 = 1;
+          let next;
+          let fibonacciSequenceText = "";
+          while (num1 <= 40) {
+            fibonacciSequenceText = fibonacciSequenceText + num1 + ", ";
+            next = num1 + num2;
+            num1 = num2;
+            num2 = next;
+          }
+          document.getElementById("card-content").innerHTML =
+            fibonacciSequenceText.slice(0, -2);
+        } else if (choice == "even") {
+          let evenSequence = 0;
+          let result = "";
+          do {
+            evenSequence = evenSequence + 2;
+            result = result + evenSequence + ", ";
+          } while (evenSequence < 18);
+          document.getElementById("card-content").innerHTML = result.slice(
+            0,
+            -2
+          );
+        } else if (choice == "odd") {
+          let oddSequence = -1;
+          let result = "";
+          do {
+            oddSequence = oddSequence + 2;
+            result = result + oddSequence + ", ";
+          } while (oddSequence < 19);
+          document.getElementById("card-content").innerHTML = result.slice(
+            0,
+            -2
+          );
+        } else {
+          alert("Invalid selection, please try again!");
+        }
+      }
+      document.getElementById("btnDisplaySequence").onclick = displaySequence;
+    </script>
+  </body>
+</html>
