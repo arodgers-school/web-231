@@ -242,142 +242,151 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
       function displayListing() {
         const choice = document.getElementById("favoriteList").value;
-        if (choice == "products") {
-          document.getElementById("products").style.display = "block";
-          document.getElementById("services").style.display = "none";
-          document.getElementById("employees").style.display = "none";
 
-          document.getElementById("tableTitle").innerHTML = "Javazon Products";
+        switch (choice) {
+          case "products":
+            document.getElementById("products").style.display = "block";
+            document.getElementById("services").style.display = "none";
+            document.getElementById("employees").style.display = "none";
 
-          document.getElementById("product1ID").innerHTML = product1.id;
-          document.getElementById("product1Description").innerHTML =
-            product1.description;
-          document.getElementById("product1Price").innerHTML =
-            product1.price.toFixed(2);
-          document.getElementById("product1Quantity").innerHTML =
-            product1.quantity;
-          document.getElementById("product1Value").innerHTML =
-            product1Value.toFixed(2);
+            document.getElementById("tableTitle").innerHTML =
+              "Javazon Products";
 
-          document.getElementById("product2ID").innerHTML = product2.id;
-          document.getElementById("product2Description").innerHTML =
-            product2.description;
-          document.getElementById("product2Price").innerHTML =
-            product2.price.toFixed(2);
-          document.getElementById("product2Quantity").innerHTML =
-            product2.quantity;
-          document.getElementById("product2Value").innerHTML =
-            product2Value.toFixed(2);
+            document.getElementById("product1ID").innerHTML = product1.id;
+            document.getElementById("product1Description").innerHTML =
+              product1.description;
+            document.getElementById("product1Price").innerHTML =
+              product1.price.toFixed(2);
+            document.getElementById("product1Quantity").innerHTML =
+              product1.quantity;
+            document.getElementById("product1Value").innerHTML =
+              product1Value.toFixed(2);
 
-          document.getElementById("product3ID").innerHTML = product3.id;
-          document.getElementById("product3Description").innerHTML =
-            product3.description;
-          document.getElementById("product3Price").innerHTML =
-            product3.price.toFixed(2);
-          document.getElementById("product3Quantity").innerHTML =
-            product3.quantity;
-          document.getElementById("product3Value").innerHTML =
-            product3Value.toFixed(2);
+            document.getElementById("product2ID").innerHTML = product2.id;
+            document.getElementById("product2Description").innerHTML =
+              product2.description;
+            document.getElementById("product2Price").innerHTML =
+              product2.price.toFixed(2);
+            document.getElementById("product2Quantity").innerHTML =
+              product2.quantity;
+            document.getElementById("product2Value").innerHTML =
+              product2Value.toFixed(2);
 
-          document.getElementById("product4ID").innerHTML = product4.id;
-          document.getElementById("product4Description").innerHTML =
-            product4.description;
-          document.getElementById("product4Price").innerHTML =
-            product4.price.toFixed(2);
-          document.getElementById("product4Quantity").innerHTML =
-            product4.quantity;
-          document.getElementById("product4Value").innerHTML =
-            product4Value.toFixed(2);
+            document.getElementById("product3ID").innerHTML = product3.id;
+            document.getElementById("product3Description").innerHTML =
+              product3.description;
+            document.getElementById("product3Price").innerHTML =
+              product3.price.toFixed(2);
+            document.getElementById("product3Quantity").innerHTML =
+              product3.quantity;
+            document.getElementById("product3Value").innerHTML =
+              product3Value.toFixed(2);
 
-          document.getElementById("product5ID").innerHTML = product5.id;
-          document.getElementById("product5Description").innerHTML =
-            product5.description;
-          document.getElementById("product5Price").innerHTML =
-            product5.price.toFixed(2);
-          document.getElementById("product5Quantity").innerHTML =
-            product5.quantity;
-          document.getElementById("product5Value").innerHTML =
-            product5Value.toFixed(2);
-        } else if (choice == "services") {
-          document.getElementById("products").style.display = "none";
-          document.getElementById("services").style.display = "block";
-          document.getElementById("employees").style.display = "none";
+            document.getElementById("product4ID").innerHTML = product4.id;
+            document.getElementById("product4Description").innerHTML =
+              product4.description;
+            document.getElementById("product4Price").innerHTML =
+              product4.price.toFixed(2);
+            document.getElementById("product4Quantity").innerHTML =
+              product4.quantity;
+            document.getElementById("product4Value").innerHTML =
+              product4Value.toFixed(2);
 
-          document.getElementById("tableTitle").innerHTML = "Javazon Services";
+            document.getElementById("product5ID").innerHTML = product5.id;
+            document.getElementById("product5Description").innerHTML =
+              product5.description;
+            document.getElementById("product5Price").innerHTML =
+              product5.price.toFixed(2);
+            document.getElementById("product5Quantity").innerHTML =
+              product5.quantity;
+            document.getElementById("product5Value").innerHTML =
+              product5Value.toFixed(2);
+            break;
+          case "services":
+            document.getElementById("products").style.display = "none";
+            document.getElementById("services").style.display = "block";
+            document.getElementById("employees").style.display = "none";
 
-          document.getElementById("services1ID").innerHTML = services1.id;
-          document.getElementById("services1Description").innerHTML =
-            services1.description;
-          document.getElementById("services1Rate").innerHTML =
-            services1.hourlyRate.toFixed(2);
-          document.getElementById("services1Min").innerHTML = services1.min;
+            document.getElementById("tableTitle").innerHTML =
+              "Javazon Services";
 
-          document.getElementById("services2ID").innerHTML = services2.id;
-          document.getElementById("services2Description").innerHTML =
-            services2.description;
-          document.getElementById("services2Rate").innerHTML =
-            services2.hourlyRate.toFixed(2);
-          document.getElementById("services2Min").innerHTML = services2.min;
+            document.getElementById("services1ID").innerHTML = services1.id;
+            document.getElementById("services1Description").innerHTML =
+              services1.description;
+            document.getElementById("services1Rate").innerHTML =
+              services1.hourlyRate.toFixed(2);
+            document.getElementById("services1Min").innerHTML = services1.min;
 
-          document.getElementById("services3ID").innerHTML = services3.id;
-          document.getElementById("services3Description").innerHTML =
-            services3.description;
-          document.getElementById("services3Rate").innerHTML =
-            services3.hourlyRate.toFixed(2);
-          document.getElementById("services3Min").innerHTML = services3.min;
-        } else if (choice == "employees") {
-          document.getElementById("products").style.display = "none";
-          document.getElementById("services").style.display = "none";
-          document.getElementById("employees").style.display = "block";
+            document.getElementById("services2ID").innerHTML = services2.id;
+            document.getElementById("services2Description").innerHTML =
+              services2.description;
+            document.getElementById("services2Rate").innerHTML =
+              services2.hourlyRate.toFixed(2);
+            document.getElementById("services2Min").innerHTML = services2.min;
 
-          document.getElementById("tableTitle").innerHTML = "Javazon Employees";
+            document.getElementById("services3ID").innerHTML = services3.id;
+            document.getElementById("services3Description").innerHTML =
+              services3.description;
+            document.getElementById("services3Rate").innerHTML =
+              services3.hourlyRate.toFixed(2);
+            document.getElementById("services3Min").innerHTML = services3.min;
+            break;
+          case "employees":
+            document.getElementById("products").style.display = "none";
+            document.getElementById("services").style.display = "none";
+            document.getElementById("employees").style.display = "block";
 
-          document.getElementById("employee1ID").innerHTML = employees1.id;
-          document.getElementById("employee1FirstName").innerHTML =
-            employees1.firstName;
-          document.getElementById("employee1LastName").innerHTML =
-            employees1.lastName;
-          document.getElementById("employee1Salary").innerHTML =
-            employees1.salary.toFixed(2);
+            document.getElementById("tableTitle").innerHTML =
+              "Javazon Employees";
 
-          document.getElementById("employee2ID").innerHTML = employees2.id;
-          document.getElementById("employee2FirstName").innerHTML =
-            employees2.firstName;
-          document.getElementById("employee2LastName").innerHTML =
-            employees2.lastName;
-          document.getElementById("employee2Salary").innerHTML =
-            employees2.salary.toFixed(2);
+            document.getElementById("employee1ID").innerHTML = employees1.id;
+            document.getElementById("employee1FirstName").innerHTML =
+              employees1.firstName;
+            document.getElementById("employee1LastName").innerHTML =
+              employees1.lastName;
+            document.getElementById("employee1Salary").innerHTML =
+              employees1.salary.toFixed(2);
 
-          document.getElementById("employee3ID").innerHTML = employees3.id;
-          document.getElementById("employee3FirstName").innerHTML =
-            employees3.firstName;
-          document.getElementById("employee3LastName").innerHTML =
-            employees3.lastName;
-          document.getElementById("employee3Salary").innerHTML =
-            employees3.salary.toFixed(2);
+            document.getElementById("employee2ID").innerHTML = employees2.id;
+            document.getElementById("employee2FirstName").innerHTML =
+              employees2.firstName;
+            document.getElementById("employee2LastName").innerHTML =
+              employees2.lastName;
+            document.getElementById("employee2Salary").innerHTML =
+              employees2.salary.toFixed(2);
 
-          document.getElementById("employee4ID").innerHTML = employees4.id;
-          document.getElementById("employee4FirstName").innerHTML =
-            employees4.firstName;
-          document.getElementById("employee4LastName").innerHTML =
-            employees4.lastName;
-          document.getElementById("employee4Salary").innerHTML =
-            employees4.salary.toFixed(2);
+            document.getElementById("employee3ID").innerHTML = employees3.id;
+            document.getElementById("employee3FirstName").innerHTML =
+              employees3.firstName;
+            document.getElementById("employee3LastName").innerHTML =
+              employees3.lastName;
+            document.getElementById("employee3Salary").innerHTML =
+              employees3.salary.toFixed(2);
 
-          document.getElementById("employee5ID").innerHTML = employees5.id;
-          document.getElementById("employee5FirstName").innerHTML =
-            employees5.firstName;
-          document.getElementById("employee5LastName").innerHTML =
-            employees5.lastName;
-          document.getElementById("employee5Salary").innerHTML =
-            employees5.salary.toFixed(2);
-        } else {
-          document.getElementById("products").style.display = "none";
-          document.getElementById("services").style.display = "none";
-          document.getElementById("employees").style.display = "none";
+            document.getElementById("employee4ID").innerHTML = employees4.id;
+            document.getElementById("employee4FirstName").innerHTML =
+              employees4.firstName;
+            document.getElementById("employee4LastName").innerHTML =
+              employees4.lastName;
+            document.getElementById("employee4Salary").innerHTML =
+              employees4.salary.toFixed(2);
 
-          document.getElementById("tableTitle").innerHTML =
-            "Please make a selection";
+            document.getElementById("employee5ID").innerHTML = employees5.id;
+            document.getElementById("employee5FirstName").innerHTML =
+              employees5.firstName;
+            document.getElementById("employee5LastName").innerHTML =
+              employees5.lastName;
+            document.getElementById("employee5Salary").innerHTML =
+              employees5.salary.toFixed(2);
+            break;
+          case "select":
+            document.getElementById("products").style.display = "none";
+            document.getElementById("services").style.display = "none";
+            document.getElementById("employees").style.display = "none";
+
+            document.getElementById("tableTitle").innerHTML =
+              "Please make a selection";
+            break;
         }
       }
 
