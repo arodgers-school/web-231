@@ -173,15 +173,16 @@ https://www.w3schools.com/js/js_switch.asp
         constructor(id, description, price, quantity) {
           this.id = id;
           this.description = description;
-          this.price = price;
+          this.price = price.toFixed(2);
           this.quantity = quantity;
+          totalValue = (price * quantity).toFixed(2);
         }
       }
       class Services {
         constructor(id, description, hourlyRate, min) {
           this.id = id;
           this.description = description;
-          this.hourlyRate = hourlyRate;
+          this.hourlyRate = hourlyRate.toFixed(2);
           this.min = min;
         }
       }
@@ -190,7 +191,7 @@ https://www.w3schools.com/js/js_switch.asp
           this.id = id;
           this.firstName = firstName;
           this.lastName = lastName;
-          this.salary = salary;
+          this.salary = salary.toFixed(2);
         }
       }
 
@@ -225,12 +226,6 @@ https://www.w3schools.com/js/js_switch.asp
         8
       );
 
-      let product1Value = product1.price * product1.quantity;
-      let product2Value = product2.price * product2.quantity;
-      let product3Value = product3.price * product3.quantity;
-      let product4Value = product4.price * product4.quantity;
-      let product5Value = product5.price * product5.quantity;
-
       let services1 = new Services(100, "Website Design", 150, 25);
       let services2 = new Services(101, "DevOps Consulting", 125, 50);
       let services3 = new Services(102, "Database Design", 125, 15);
@@ -256,52 +251,47 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("product1ID").innerHTML = product1.id;
             document.getElementById("product1Description").innerHTML =
               product1.description;
-            document.getElementById("product1Price").innerHTML =
-              product1.price.toFixed(2);
+            document.getElementById("product1Price").innerHTML = product1.price;
             document.getElementById("product1Quantity").innerHTML =
               product1.quantity;
             document.getElementById("product1Value").innerHTML =
-              product1Value.toFixed(2);
+              product1.totalValue;
 
             document.getElementById("product2ID").innerHTML = product2.id;
             document.getElementById("product2Description").innerHTML =
               product2.description;
-            document.getElementById("product2Price").innerHTML =
-              product2.price.toFixed(2);
+            document.getElementById("product2Price").innerHTML = product2.price;
             document.getElementById("product2Quantity").innerHTML =
               product2.quantity;
             document.getElementById("product2Value").innerHTML =
-              product2Value.toFixed(2);
+              product2.totalValue;
 
             document.getElementById("product3ID").innerHTML = product3.id;
             document.getElementById("product3Description").innerHTML =
               product3.description;
-            document.getElementById("product3Price").innerHTML =
-              product3.price.toFixed(2);
+            document.getElementById("product3Price").innerHTML = product3.price;
             document.getElementById("product3Quantity").innerHTML =
               product3.quantity;
             document.getElementById("product3Value").innerHTML =
-              product3Value.toFixed(2);
+              product3.totalValue;
 
             document.getElementById("product4ID").innerHTML = product4.id;
             document.getElementById("product4Description").innerHTML =
               product4.description;
-            document.getElementById("product4Price").innerHTML =
-              product4.price.toFixed(2);
+            document.getElementById("product4Price").innerHTML = product4.price;
             document.getElementById("product4Quantity").innerHTML =
               product4.quantity;
             document.getElementById("product4Value").innerHTML =
-              product4Value.toFixed(2);
+              product4.totalValue;
 
             document.getElementById("product5ID").innerHTML = product5.id;
             document.getElementById("product5Description").innerHTML =
               product5.description;
-            document.getElementById("product5Price").innerHTML =
-              product5.price.toFixed(2);
+            document.getElementById("product5Price").innerHTML = product5.price;
             document.getElementById("product5Quantity").innerHTML =
               product5.quantity;
             document.getElementById("product5Value").innerHTML =
-              product5Value.toFixed(2);
+              product5.totalValue;
             break;
           case "services":
             document.getElementById("products").style.display = "none";
@@ -315,21 +305,21 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("services1Description").innerHTML =
               services1.description;
             document.getElementById("services1Rate").innerHTML =
-              services1.hourlyRate.toFixed(2);
+              services1.hourlyRate;
             document.getElementById("services1Min").innerHTML = services1.min;
 
             document.getElementById("services2ID").innerHTML = services2.id;
             document.getElementById("services2Description").innerHTML =
               services2.description;
             document.getElementById("services2Rate").innerHTML =
-              services2.hourlyRate.toFixed(2);
+              services2.hourlyRate;
             document.getElementById("services2Min").innerHTML = services2.min;
 
             document.getElementById("services3ID").innerHTML = services3.id;
             document.getElementById("services3Description").innerHTML =
               services3.description;
             document.getElementById("services3Rate").innerHTML =
-              services3.hourlyRate.toFixed(2);
+              services3.hourlyRate;
             document.getElementById("services3Min").innerHTML = services3.min;
             break;
           case "employees":
@@ -346,7 +336,7 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("employee1LastName").innerHTML =
               employees1.lastName;
             document.getElementById("employee1Salary").innerHTML =
-              employees1.salary.toFixed(2);
+              employees1.salary;
 
             document.getElementById("employee2ID").innerHTML = employees2.id;
             document.getElementById("employee2FirstName").innerHTML =
@@ -354,7 +344,7 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("employee2LastName").innerHTML =
               employees2.lastName;
             document.getElementById("employee2Salary").innerHTML =
-              employees2.salary.toFixed(2);
+              employees2.salary;
 
             document.getElementById("employee3ID").innerHTML = employees3.id;
             document.getElementById("employee3FirstName").innerHTML =
@@ -362,7 +352,7 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("employee3LastName").innerHTML =
               employees3.lastName;
             document.getElementById("employee3Salary").innerHTML =
-              employees3.salary.toFixed(2);
+              employees3.salary;
 
             document.getElementById("employee4ID").innerHTML = employees4.id;
             document.getElementById("employee4FirstName").innerHTML =
@@ -370,7 +360,7 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("employee4LastName").innerHTML =
               employees4.lastName;
             document.getElementById("employee4Salary").innerHTML =
-              employees4.salary.toFixed(2);
+              employees4.salary;
 
             document.getElementById("employee5ID").innerHTML = employees5.id;
             document.getElementById("employee5FirstName").innerHTML =
@@ -378,7 +368,7 @@ https://www.w3schools.com/js/js_switch.asp
             document.getElementById("employee5LastName").innerHTML =
               employees5.lastName;
             document.getElementById("employee5Salary").innerHTML =
-              employees5.salary.toFixed(2);
+              employees5.salary;
             break;
           case "select":
             document.getElementById("products").style.display = "none";
