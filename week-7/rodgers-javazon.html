@@ -34,7 +34,7 @@ https://www.w3schools.com/js/js_switch.asp
           <label for="txtMyNumber" id="txtMyNumberLabel">
             Choose a listing:
           </label>
-          <select name="menu" class="drop-down-menu" id="favoriteList">
+          <select name="menu" class="drop-down-menu" id="listing">
             <option value="select">--Select--</option>
             <option value="products">Products</option>
             <option value="services">Services</option>
@@ -175,7 +175,7 @@ https://www.w3schools.com/js/js_switch.asp
           this.description = description;
           this.price = price.toFixed(2);
           this.quantity = quantity;
-          totalValue = (price * quantity).toFixed(2);
+          this.totalValue = (price * quantity).toFixed(2);
         }
       }
       class Services {
@@ -237,7 +237,7 @@ https://www.w3schools.com/js/js_switch.asp
       let employees5 = new Employee(1011, "Haydn", "Joseph", 32.5);
 
       function displayListing() {
-        const choice = document.getElementById("favoriteList").value;
+        const choice = document.getElementById("listing").value;
 
         switch (choice) {
           case "products":
