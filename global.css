@@ -84,3 +84,8 @@
 .return-home:visited {
   color: #3c275a;
 }
+
+td,
+th {
+  padding-left: 7px;
+}
