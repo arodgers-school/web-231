@@ -9,6 +9,7 @@ References:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 https://stackoverflow.com/questions/13939573/how-to-add-spaces-between-array-items-javascript/13939632
 https://www.w3schools.com/js/js_arrays.asp
+https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
 
 -->
 
@@ -90,15 +91,14 @@ https://www.w3schools.com/js/js_arrays.asp
       function alphabetGame() {
         let pos = document.getElementById("txtPosition").value;
 
-        if (pos == "0") {
-          document.getElementById("card-content-results").innerHTML =
-            "0 is not a valid choice";
-        } else if (pos <= 26) {
-          document.getElementById("card-content-results").innerHTML =
-            alphabet[pos - 1] + " is at position " + pos + " in the alphabet.";
-        } else if (pos > 26) {
+        let letter = alphabet[pos - 1];
+
+        if (letter === undefined) {
           document.getElementById("card-content-results").innerHTML =
             "There are not " + pos + " letters in the alphabet";
+        } else {
+          document.getElementById("card-content-results").innerHTML =
+            letter + " is at position " + pos + " in the alphabet.";
         }
       }
       document.getElementById("btnFindLetter").onclick = alphabetGame;
