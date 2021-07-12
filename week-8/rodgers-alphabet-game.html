@@ -1,0 +1,107 @@
+<!--
+Title: Assignment 8.2
+Author: Adam Rodgers
+Date: 12 July 2021
+Modified By: Adam Rodgers
+Description: Alphabet Game
+
+References:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://stackoverflow.com/questions/13939573/how-to-add-spaces-between-array-items-javascript/13939632
+https://www.w3schools.com/js/js_arrays.asp
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="rodgers-alphabet-game.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="app-header">Welcome to the Alphabet Game!</h1>
+
+      <div class="card">
+        <div class="card-title">Alphabet Number Form</div>
+        <br />
+        <form>
+          <label for="listing" id="listingLabel">
+            Alphabet Letter Position
+          </label>
+          <input id="txtPosition" />
+          <br />
+          <br />
+          <button type="button" id="btnFindLetter" class="btn">
+            Display Listing
+          </button>
+        </form>
+      </div>
+      <br />
+      <div class="card">
+        <p class="card-title">Letters in the Alphabet</p>
+        <p id="card-content"></p>
+      </div>
+      <div class="card">
+        <p class="card-title">Results</p>
+        <p id="card-content-results"></p>
+      </div>
+      <br />
+      <a href="../index.html" class="return-home">Return</a>
+    </div>
+    <script>
+      let alphabet = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
+
+      var alphabetAsString = alphabet.join(", ");
+      document.getElementById("card-content").innerHTML = alphabetAsString;
+
+      function alphabetGame() {
+        let pos = document.getElementById("txtPosition").value;
+
+        if (pos == "0") {
+          document.getElementById("card-content-results").innerHTML =
+            "0 is not a valid choice";
+        } else if (pos <= 26) {
+          document.getElementById("card-content-results").innerHTML =
+            alphabet[pos - 1] + " is at position " + pos + " in the alphabet.";
+        } else if (pos > 26) {
+          document.getElementById("card-content-results").innerHTML =
+            "There are not " + pos + " letters in the alphabet";
+        }
+      }
+      document.getElementById("btnFindLetter").onclick = alphabetGame;
+    </script>
+  </body>
+</html>
