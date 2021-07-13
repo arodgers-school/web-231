@@ -85,8 +85,14 @@ https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is
         "Z",
       ];
 
-      var alphabetAsString = alphabet.join(", ");
-      document.getElementById("card-content").innerHTML = alphabetAsString;
+      var alphabetOutput = "";
+      for (var i = 0; i < alphabet.length; i += 1) {
+        alphabetOutput += alphabet[i] + ", ";
+      }
+      document.getElementById("card-content").innerHTML = alphabetOutput.slice(
+        0,
+        -2
+      );
 
       function alphabetGame() {
         let pos = document.getElementById("txtPosition").value;
