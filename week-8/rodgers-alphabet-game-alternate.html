@@ -7,6 +7,7 @@ Description: Alphabet Game
 
 References:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://stackoverflow.com/questions/13939573/how-to-add-spaces-between-array-items-javascript/13939632
 https://www.w3schools.com/js/js_arrays.asp
 https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
 
@@ -84,14 +85,8 @@ https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is
         "Z",
       ];
 
-      var alphabetOutput = "";
-      for (var i = 0; i < alphabet.length; i += 1) {
-        alphabetOutput += alphabet[i] + ", ";
-      }
-      document.getElementById("card-content").innerHTML = alphabetOutput.slice(
-        0,
-        -2
-      );
+      var alphabetAsString = alphabet.join(", ");
+      document.getElementById("card-content").innerHTML = alphabetAsString;
 
       function alphabetGame() {
         let pos = document.getElementById("txtPosition").value;
